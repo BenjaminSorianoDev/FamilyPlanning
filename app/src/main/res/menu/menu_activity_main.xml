@@ -1,0 +1,28 @@
+<!-- toolbar menu -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- define date icon -->
+    <item
+        android:id="@+id/menu_activity_main_search"
+        android:icon="@drawable/ic_date_range_white_24dp"
+        app:showAsAction="ifRoom"
+        android:title="Date">
+    </item>
+
+    <!-- information icon -->
+    <item
+        android:id="@+id/menu_activity_main_information"
+        android:icon="@drawable/ic_info_white_24dp"
+        app:showAsAction="ifRoom"
+        android:title="Information">
+    </item>
+
+    <!-- settings icon -->
+    <item
+        android:id="@+id/menu_activity_main_params"
+        android:icon="@drawable/ic_settings_white_24dp"
+        app:showAsAction="ifRoom"
+        android:title="Paramètres">
+    </item>
+</menu>

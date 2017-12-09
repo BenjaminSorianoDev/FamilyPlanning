@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">FamilyPlanning</string>
+    <string name="join_group">Rejoindre un groupe</string>
+    <string name="create_group">Créer un groupe</string>
+    <string name="title_activity_join_groupe">Rejoindre un groupe</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="planning">Planning</string>
+
+    <item name="visible" type="id" />
+    <item name="masked" type="id" />
+    <string name="title_activity_login">Sign in</string>
+    <string name="mot_de_passe_du_groupe">Mot de passe du groupe</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="retour">Retour</string>
+    <string name="valider">Valider</string>
+
+    <string name="title_menu">Menu</string>
+    <string name="title_planning">Planning</string>
+    <string name="title_courses">Courses</string>
+    <string name="search_title">Chercher une date</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu">Menu</string>
+</resources>

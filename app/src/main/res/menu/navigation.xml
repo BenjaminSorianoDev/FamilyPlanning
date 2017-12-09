@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--bottom navigation menu -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Menu item -->
+    <item
+        android:id="@+id/navigation_menu"
+        android:icon="@drawable/ic_restaurant_black_24dp"
+        android:title="@string/menu" />
+
+    <!-- Planning item -->
+    <item
+        android:id="@+id/navigation_planning"
+        android:icon="@drawable/ic_planning_black_24dp"
+        android:title="@string/title_planning" />
+
+    <!-- Shopping list item -->
+    <item
+        android:id="@+id/navigation_courses"
+        android:icon="@drawable/ic_local_grocery_store_black_24dp"
+        android:title="@string/title_courses" />
+
+</menu>
