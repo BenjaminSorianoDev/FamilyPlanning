@@ -7,6 +7,7 @@ import android.util.Log;
 
 /**
  * Created by benja on 04/12/2017.
+ * Not implemented yet
  */
 
 public class DataManager extends SQLiteOpenHelper {
