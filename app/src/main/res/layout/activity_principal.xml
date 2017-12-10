@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ihm.bottomnavigationtest.Controllers.Activities.MainActivity">
+    tools:context="com.ihm.familyplanning.Controllers.Activities.PrincipalActivity">
 
     <!-- Toolbar -->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/activity_main_toolbar"
+        android:id="@+id/activity_principal_toolbar"
         android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

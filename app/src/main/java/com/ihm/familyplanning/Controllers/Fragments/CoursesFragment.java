@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ihm.bottomnavigationtest.R;
+import com.ihm.familyplanning.R;
 
 /**
  * A simple {@link Fragment} subclass.

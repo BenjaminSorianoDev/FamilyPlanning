@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         joinGroupButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                Intent PrincipalActivity = new Intent(MainActivity.this, PrincipalActivity.class);
+                startActivity(PrincipalActivity);
             }
         });
 

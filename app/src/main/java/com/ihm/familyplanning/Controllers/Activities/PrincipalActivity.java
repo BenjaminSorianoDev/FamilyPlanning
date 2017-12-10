@@ -3,13 +3,14 @@ package com.ihm.familyplanning.Controllers.Activities;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +26,6 @@ import com.ihm.familyplanning.R;
 import java.util.Calendar;
 
 public class PrincipalActivity extends AppCompatActivity {
-
     /**
      * date selection button
      */
@@ -67,17 +67,14 @@ public class PrincipalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_principal);
         mDatePickerButton = (Button) findViewById(R.id.toolbar_Date_button);
-
         mDatePickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onClickOnDatePicker();
             }
         });
-
         mDateListener = new DatePickerDialog.OnDateSetListener() {
 
             @Override
@@ -87,10 +84,8 @@ public class PrincipalActivity extends AppCompatActivity {
                 mDatePickerButton.setText(date);
             }
         };
-
         //Configuring Toolbar
         this.configureToolbar();
-
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -105,7 +100,7 @@ public class PrincipalActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Inflate the menu and add it to the Toolbar
-        getMenuInflater().inflate(R.menu.menu_activity_main, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_principal, menu);
         return true;
     }
 
@@ -118,13 +113,13 @@ public class PrincipalActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         //3 - Handle actions on menu items
         switch (item.getItemId()) {
-            case R.id.menu_activity_main_params:
+            case R.id.menu_activity_principal_params:
                 Toast.makeText(this, "Paramètres.", Toast.LENGTH_LONG).show();
                 return true;
-            case R.id.menu_activity_main_search:
+            case R.id.menu_activity_principal_search:
                 this.onClickOnDatePicker();
                 return true;
-            case R.id.menu_activity_main_information:
+            case R.id.menu_activity_principal_information:
                 Toast.makeText(this, "Information.", Toast.LENGTH_LONG).show();
                 return true;
             default:
@@ -155,7 +150,7 @@ public class PrincipalActivity extends AppCompatActivity {
      */
     private void configureToolbar(){
         // Get the toolbar view inside the activity layout
-        Toolbar toolbar = (Toolbar) findViewById(R.id.activity_main_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.activity_principal_toolbar);
         // Sets the Toolbar
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);

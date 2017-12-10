@@ -4,7 +4,7 @@
 
     <!-- define date icon -->
     <item
-        android:id="@+id/menu_activity_main_search"
+        android:id="@+id/menu_activity_principal_search"
         android:icon="@drawable/ic_date_range_white_24dp"
         app:showAsAction="ifRoom"
         android:title="Date">
@@ -12,7 +12,7 @@
 
     <!-- information icon -->
     <item
-        android:id="@+id/menu_activity_main_information"
+        android:id="@+id/menu_activity_principal_information"
         android:icon="@drawable/ic_info_white_24dp"
         app:showAsAction="ifRoom"
         android:title="Information">
@@ -20,7 +20,7 @@
 
     <!-- settings icon -->
     <item
-        android:id="@+id/menu_activity_main_params"
+        android:id="@+id/menu_activity_principal_params"
         android:icon="@drawable/ic_settings_white_24dp"
         app:showAsAction="ifRoom"
         android:title="Paramètres">

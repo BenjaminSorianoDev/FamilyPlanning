@@ -29,5 +29,13 @@ public class CreateGroupActivity extends AppCompatActivity {
                 startActivity(MainActivity);
             }
         });
+
+        validButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent PrincipalActivity = new Intent(CreateGroupActivity.this, PrincipalActivity.class);
+                startActivity(PrincipalActivity);
+            }
+        });
     }
 }
