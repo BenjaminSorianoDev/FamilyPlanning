@@ -5,10 +5,8 @@
     tools:context="com.ihm.familyplanning.Controllers.Fragments.PlanningFragment">
 
         <TableLayout
+            android:id="@+id/idTable"
             android:layout_width="fill_parent"
-            android:stretchColumns="0"
-            android:layout_height="wrap_content"
-            android:id="@+id/idTable">
-        </TableLayout>
+            android:layout_height="wrap_content"/>
 
 </FrameLayout>

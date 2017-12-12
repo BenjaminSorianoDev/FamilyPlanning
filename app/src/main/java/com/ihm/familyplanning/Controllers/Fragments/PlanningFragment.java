@@ -1,9 +1,9 @@
 package com.ihm.familyplanning.Controllers.Fragments;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +19,7 @@ import com.ihm.familyplanning.R;
  */
 public class PlanningFragment extends Fragment {
 
+    private boolean even = true;
     public PlanningFragment() {
         // Required empty public constructor
     }
@@ -29,47 +30,74 @@ public class PlanningFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_planning, container, false);
 
-        // données du tableau
-        final String [] col1 = {"col1:ligne1","col1:ligne2","col1:ligne3","col1:ligne4","col1:ligne5"};
-        final String [] col2 = {"col2:ligne1","col2:ligne2","col2:ligne3","col2:ligne4","col2:ligne5"};
-
         TableLayout table = view.findViewById(R.id.idTable); // on prend le tableau défini dans le layout
         TableRow row; // création d'un élément : ligne
-        TextView tv1,tv2; // création des cellules
+        row = this.addRow("heure","pseudo","rdv",true);
+        table.addView(row);
+        row = this.addRow("20h","Papa","Soirée OM-PSG avec les potes",false);
+        table.addView(row);
+        row = this.addRow("17h","Maman","rdv chez la gynecologue",false);
+        table.addView(row);
+        row = this.addRow("16h","Manon","Piano",false);
+        table.addView(row);
 
-        // pour chaque ligne
-        for(int i=0;i<col1.length;i++) {
-            row = new TableRow(getActivity()); // création d'une nouvelle ligne
+        return view;
+    }
 
-            final int id=i;
+    private TableRow addRow(String hour, String pseudo, String rdv, boolean isFirst){
+        TableRow row; // création d'un élément : ligne
+        TextView tv1,tv2,tv3; // création des cellules
+
+        row = new TableRow(getActivity());
+        if(even) {
+            row.setBackgroundColor(this.getResources().getColor(R.color.colorEvenTab));
+            even = false;
+        }
+        else{
+            row.setBackgroundColor(this.getResources().getColor(R.color.colorOddTab));
+            even = true;
+        }
+        if(!isFirst) {
             row.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // faites ici ce que vous voulez
-                    Log.d("mydebug","i="+id);
                 }
             });
-
-            tv1 = new TextView(getActivity()); // création cellule
-            tv1.setText(col1[i]); // ajout du texte
-            tv1.setGravity(Gravity.CENTER); // centrage dans la cellule
-            // adaptation de la largeur de colonne à l'écran :
-            tv1.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1 ) );
-
-            // idem 2ème cellule
-            tv2 = new TextView(getActivity());
-            tv2.setText(col2[i]);
-            tv2.setGravity(Gravity.CENTER);
-            tv2.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1 ) );
-
-            // ajout des cellules à la ligne
-            row.addView(tv1);
-            row.addView(tv2);
-
-            // ajout de la ligne au tableau
-            table.addView(row);
         }
-        return view;
+        tv1 = new TextView(getActivity()); // création cellule
+        tv1.setText(hour); // ajout du texte
+        tv1.setGravity(Gravity.CENTER); // centrage dans la cellule
+        tv1.setTextSize(18f);
+        // adaptation de la largeur de colonne à l'écran :
+        tv1.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1 ) );
+
+        // idem 2ème cellule
+        tv2 = new TextView(getActivity());
+        tv2.setText(pseudo);
+        tv2.setGravity(Gravity.CENTER);
+        tv2.setTextSize(18f);
+        tv2.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1 ) );
+
+
+        // column 3
+        tv3 = new TextView(getActivity());
+        tv3.setText(rdv);
+        tv3.setGravity(Gravity.CENTER);
+        tv3.setTextSize(18f);
+        tv3.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1 ) );
+
+        if(isFirst)
+        {
+            tv1.setTypeface(null, Typeface.BOLD);
+            tv2.setTypeface(null, Typeface.BOLD);
+            tv3.setTypeface(null, Typeface.BOLD);
+        }
+        // ajout des cellules à la ligne
+        row.addView(tv1);
+        row.addView(tv2);
+        row.addView(tv3);
+
+        return row;
     }
 
 }
